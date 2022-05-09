@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button
+    class="btn btn-success"
+    (click)="onNewRecipe()"
+    >New recipe</button>
+  </div>
+</div>
+<hr>
+<div class="row" >
+  <div class="col-xs-12">
+  <!-- I can now also pass the index, I have to retrieve that from my ngFor loop.
+  I'll simply bind i to index to get the index of each iteration basically and then
+  I'll pass this index i to the app-recipe-item and bind it to the index property there, -->
+    <app-recipe-item
+    *ngFor="let recipeEl of recipes let i = index"
+    [recipe] = "recipeEl"
+    [index] = "i"
+    ></app-recipe-item>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+
+<!-- We can set a link with routerLink
+but now we get a dynamic segment in the path.
+So now I bind routerLink with square brackets
+because now I want to pass this array which allows
+me to really configure segment for segment of my path.
+Now the first segment is also the only segment,
+that will be the ID I want to load.
+So I will use a relative path because this element here,
+the list already is loaded at /recipes,
+so whenever I just add the ID here, that is already all I want
+because then we're going to end up at
+recipes/id.
+Now to get the ID, I need to pass this extra information to the recipe-item component. -->
+<a
+          style="cursor: pointer;"
+          class="list-group-item clearfix"
+          [routerLink]="[index]"
+          routerLinkActive="active"
+  >
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+        <p class="list-group-item-text">{{recipe.description}}</p>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="recipe.imagePath"
+          alt="{{recipe.name}}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
